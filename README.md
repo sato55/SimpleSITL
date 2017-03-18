@@ -15,7 +15,7 @@ The scripts are based on the SITL setup instructions here: http://ardupilot.org/
 2. Download the 64-bit Cygwin installer from https://cygwin.com/install.html and place in the same folder as these scripts.
 3. Run the script "1 - cygwin_install.bat". This will install Cygwin to C:\cygwin
 4. Run the script "2 - APM source download.bat" this will download and configure the APM source code and any required supporting libraries. This includes the JSBSim simulator for APM:Plane.
-5. Download MAVProxy (http://firmware.ardupilot.org/Tools/MAVProxy/)
+5. Download and install MAVProxy (http://firmware.ardupilot.org/Tools/MAVProxy/)
 
 ## Running SITL:
 There are several options for running SITL. In all cases, SITL will output a mavlink stream on 127.0.0.1:14550 (UDP) for connection to any GCS software (Such as Mission Planner).
