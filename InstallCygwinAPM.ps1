@@ -7,12 +7,12 @@ Write-Output "Starting Downloads"
 Write-Output "Downloading MAVProxy (1/6)"
 Start-BitsTransfer -Source "http://firmware.ardupilot.org/Tools/MAVProxy/MAVProxySetup-latest.exe" -Destination "$PSScriptRoot\MAVProxySetup-latest.exe"
 
-Write-Output "Downloading Cygwin x64 (2/6)"
-Start-BitsTransfer -Source "https://cygwin.com/setup-x86_64.exe" -Destination "$PSScriptRoot\setup-x86_64.exe"
+Write-Output "Downloading Cygwin x86 (2/6)"
+Start-BitsTransfer -Source "https://cygwin.com/setup-x86.exe" -Destination "$PSScriptRoot\setup-x86.exe"
 
-Write-Output "Installing Cygwin x64 (3/6)"
-& $PSScriptRoot\setup-x86_64.exe --root="C:\cygwin" --no-startmenu --local-package-dir=$env:USERPROFILE\Downloads --site="http://cygwin.mirror.constant.com" --packages autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel, libxml2-devel,python-libxml2,libxslt-devel,python-devel,procps-ng --quiet-mode | Out-Null
-Start-Process -wait -FilePath $PSScriptRoot\setup-x86_64.exe -ArgumentList "--root=C:\cygwin --no-startmenu --local-package-dir=$env:USERPROFILE\Downloads --site=http://cygwin.mirror.constant.com --packages autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel, libxml2-devel,python-libxml2,libxslt-devel,python-devel,procps-ng --quiet-mode"
+Write-Output "Installing Cygwin x86 (3/6)"
+& $PSScriptRoot\setup-x86.exe --root="C:\cygwin" --no-startmenu --local-package-dir=$env:USERPROFILE\Downloads --site="http://cygwin.mirror.constant.com" --packages autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel, libxml2-devel,python-libxml2,libxslt-devel,python-devel,procps-ng --quiet-mode | Out-Null
+Start-Process -wait -FilePath $PSScriptRoot\setup-x86.exe -ArgumentList "--root=C:\cygwin --no-startmenu --local-package-dir=$env:USERPROFILE\Downloads --site=http://cygwin.mirror.constant.com --packages autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel, libxml2-devel,python-libxml2,libxslt-devel,python-devel,procps-ng --quiet-mode"
 
 Write-Output "Configuring Cygwin (4/6)"
 Copy-Item apm_install.sh C:\cygwin\home
